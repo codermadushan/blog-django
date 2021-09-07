@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends "blog/base.html" %}
+    {% block title_block %}Madushan's Blog Home{% endblock %}
+    {% block content %}
+        <h1>MADUSHAN'S BLOG</h1>
+        {% if tag %}
+            <h2>Posts Tagged With "{{tag.name}}"</h2>
+        {% endif %}
+        {%for post in post_list%}
+            <a href="{{post.get_absolute_url}}"><h2>{{post.title}}</h2></a>
+            <p id="date">Published on {{post.publish}} By {{post.author|title}}</p>
+            <p>Tags: 
+                {% for tag in post.tags.all %}
+                    <a href="{% url 'post_list_by_tag_name' tag.slug %}" style="color: red">{{tag.name}}</a>
+                    {% if not forloop.last %},{% endif %}
+                {% endfor %}
+            </p>
+            <p>{{post.body|truncatewords:30|linebreaks}}</p><br><br>
+        {% endfor %}
+        {% include "blog/pagination.html" with page=post_list %}
+    {% endblock %}

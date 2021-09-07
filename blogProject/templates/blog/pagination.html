@@ -1,0 +1,9 @@
+<div class="paginator">
+    <span>Page {{page.number}} of {{page.paginator.num_pages}}</span>&nbsp&nbsp&nbsp
+    {% if page.has_previous %}
+        <a href="?page={{page.previous_page_number}}" style="color: #FF0000">Previous Page</a>&nbsp&nbsp&nbsp
+    {% endif %}
+    {% if page.has_next %}
+        <a href="?page={{page.next_page_number}}" style="color: #FF0000">Next Page</a>
+    {% endif %}
+</div>

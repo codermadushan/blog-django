@@ -1,0 +1,54 @@
+.content{
+    width: 60%;
+    float: left;
+    padding-left: 10px;
+}
+
+.sidebar{
+    width: 40%;
+    float: right;
+    padding: 10px;
+    background: green;
+}
+
+h1{
+    text-align: center;
+    border-bottom: 1px solid red;
+    padding-bottom: 10px;
+}
+
+body{
+    color: white;
+    background: #11182F;
+}
+
+#date{
+    color: #5DD8E4;
+    font-size: 14px;
+    font-style: italic;
+}
+
+a h2{
+    color: yellow;
+}
+
+a h2:hover{
+    color: red;
+}
+
+form{
+    color: #FF0000;
+}
+
+#post_count{
+    color: yellow;
+    font-size: 25px;
+}
+
+li a{
+    color: white;
+}
+
+li a:hover{
+    color: yellow;
+}
